@@ -2,11 +2,12 @@ name: Test React App
 on: push
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Git Repository Code
-    uses: actions/checkout@v3
-    - name: Install Dependecies
-    run: npm ci
-    - name: Test Application
-    run: npm run test
+  build_named:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Repository Code
+        uses: actions/checkout@v3
+      - name: Install Dependecies
+        run: npm ci
+      - name: Test Application
+        run: npm run test
