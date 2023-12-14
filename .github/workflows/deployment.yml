@@ -30,4 +30,4 @@ jobs:
       - name: Build Application
         run: npm run build
       - name: Deploy
-        run: Echo Deploying
+        run: echo Deploying
