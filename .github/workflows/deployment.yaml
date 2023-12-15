@@ -10,6 +10,11 @@ jobs:
     steps:
       - name: Git Repository Code
         uses: actions/checkout@v3
+      - name: Cache deps
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependecies
         run: npm ci
       - name: Test Application
@@ -20,6 +25,11 @@ jobs:
     steps:
       - name: Git Repository Code
         uses: actions/checkout@v3
+      - name: Cache deps
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependecies
         run: npm ci
       - name: Lint Application
@@ -30,6 +40,11 @@ jobs:
     steps:
       - name: Git Repository Code
         uses: actions/checkout@v3
+      - name: Cache deps
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependecies
         run: npm ci
       - name: Build Application
